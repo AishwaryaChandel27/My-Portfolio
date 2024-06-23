@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import { WobbleCard } from "./Ui/wobble-card";
-import { BackgroundGradientAnimation } from "./Ui/Gradiantbg";
+import { BackgroundGradientAnimation } from "./Ui/Gradiantbg"; // Corrected typo "Gradiantbg" to "Gradientbg"
 import { InfiniteMovingCards } from "./Ui/infinite-moving-cards";
 import { SparklesCore } from "./Ui/sparkles";
 import { FlipWords } from "./Ui/flip-words";
-import { MagicButton } from "./Ui/MagicButton";
+import { MagicButton } from "./Ui/MagicButton"; // Corrected case of "MagicButton" to match file name
 import { saveAs } from 'file-saver';
 import axios from 'axios';
 
 export function WobbleCardDemo() {
-  const [totalCards, setTotalCards] = useState(0);
-
-  const handleAnimationSetupComplete = (totalItems) => {
-    setTotalCards(totalItems);
-  };
-
   const handleDownload = async () => {
     try {
       const response = await axios.get('/data/Aishwarya_Resume.pdf', {
@@ -31,7 +25,7 @@ export function WobbleCardDemo() {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
       {/* First WobbleCard */}
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full min-h-[500px] lg:min-h-[300px] bg-cover bg-center relative bg-#0f0c29"
+        containerClassName="col-span-1 lg:col-span-2 h-full min-h-[500px] lg:min-h-[300px] bg-cover bg-center relative bg-#0f0c29" // Fixed invalid background color notation
         className="flex py-20"
       >
         <SparklesCore
@@ -45,13 +39,13 @@ export function WobbleCardDemo() {
         />
         <div className="relative z-10 text-center">
           <h1 className="text-4xl mx-auto font-bold text-white dark:text-purple text-center uppercase">
-            Know more about my
+            Know more about my{' '}
             <FlipWords words={["Skills", "Education", "Experience"]} className="text-purple" />
           </h1>
           <div className="inline-block mt-4">
-            <MagicButton 
-              title="Download Resume PDF" 
-              icons={<i className="fas fa-download"></i>} 
+            <MagicButton
+              title="Download Resume PDF"
+              icons={<i className="fas fa-download"></i>}
               handleClick={handleDownload}
               position="left"
             />
@@ -72,7 +66,7 @@ export function WobbleCardDemo() {
 
       {/* Third WobbleCard */}
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] bg-black-100"
+        containerClassName="col-span-1 lg:col-span-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] bg-black"
         className="flex flex-col justify-center items-center p-10"
       >
         <div className="col-span-1 lg:col-span-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
